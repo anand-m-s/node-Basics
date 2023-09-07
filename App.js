@@ -10,6 +10,19 @@ app.set('view engine', 'ejs');
 //listen for requests
 app.listen(3000);
 
+//middleware
+
+app.use((req,res,next)=>{
+    console.log('New req made');
+    console.log('host:',req.hostname);
+    console.log('path:',req.path);
+    console.log('method:',req.method);
+    next();
+})
+app.use((req,res,next)=>{
+    console.log('in the next middleware');
+    next();
+})
 const blogs = [
     {title : 'An Embodied Mind Can Help Fight Cancer',snippet : 'Mental imagery plays a core role in many health disorders and plays an increasingly important role in their treatment. The healing power of mental imagery can be considerable.'},
     {title : 'KEY',snippet : 'meditate ,listen to musiq ,gain consciousness'},
