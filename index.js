@@ -72,29 +72,29 @@ const fs = require('fs')
 
 
 //writing files
-// fs.writeFile('./blogs/blog.txt',"eraze everything",()=>{
+// fs.writeFile('./blogs/blog.txt',"blahhh bhu hahahah",()=>{
 //     console.log('file was written');
 // })
 // console.log("time check");
 
 //directories
 
-// if(!fs.existsSync('./assets')){
-// fs.mkdir('./assets',(err)=>{
-//     if(err){
-//         console.log(err);
-//     }
-//     console.log("folder created");
-// })
-//  }
-//  else{
-//     fs.rmdir('./assets',(err)=>{
-//         if(err){
-//             console.log(err);
-//         }
-//         console.log("folder deleted");
-//     })
-// }
+if(!fs.existsSync('./assets')){
+fs.mkdir('./assets',(err)=>{
+    if(err){
+        console.log(err);
+    }
+    console.log("folder created");
+})
+ }
+ else{
+    fs.rmdir('./assets',(err)=>{
+        if(err){
+            console.log(err);
+        }
+        console.log("folder deleted");
+    })
+}
 
 //Deleting files 
 
@@ -106,3 +106,21 @@ const fs = require('fs')
 //         console.log("File deleted");
 //     })
 // }
+
+
+//Stream and buffer
+
+// const fs = require('fs')
+
+// const readStream = fs.createReadStream('./blogs/blogs1.txt',{encoding: "utf8"});
+// const writeStream = fs.createWriteStream('./blogs/incomingfile.txt')
+// readStream.on('data',(chunk)=>{
+//     console.log("-----NEW CHUNK-----");
+//     console.log(chunk);
+//     // writeStream.write('\n----NEW CHUNK-----\n');
+//     writeStream.write(chunk);
+// });
+
+ //piping
+ 
+// readStream.pipe(writeStream);
